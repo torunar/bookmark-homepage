@@ -1,4 +1,4 @@
-const homepageUrl = browser.extension.getURL('homepage.html');
+const homepageUrl = browser.runtime.getURL('homepage.html');
 
 browser.tabs.onCreated.addListener(tab => {
     if (tab.url !== 'about:newtab') {
