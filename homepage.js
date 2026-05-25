@@ -9,7 +9,6 @@
 
         const link = document.createElement('a');
         link.classList.add('link');
-        link.target = '_blank';
         link.href = bookmark.url;
         link.appendChild(document.createTextNode(bookmark.title));
 
