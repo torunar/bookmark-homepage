@@ -10,7 +10,19 @@
         const link = document.createElement('a');
         link.classList.add('link');
         link.href = bookmark.url;
-        link.appendChild(document.createTextNode(bookmark.title));
+
+        const favicon = document.createElement('img');
+        favicon.classList.add('favicon');
+        favicon.alt = '';
+        favicon.width = 32;
+        favicon.height = 32;
+        favicon.src = `https://external-content.duckduckgo.com/ip3/${(new URL(bookmark.url)).hostname}.ico`;
+        link.appendChild(favicon);
+
+        const title = document.createElement('header');
+        title.classList.add('title');
+        title.appendChild(document.createTextNode(bookmark.title));
+        link.appendChild(title);
 
         root.appendChild(link);
     })

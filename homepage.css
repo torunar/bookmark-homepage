@@ -10,20 +10,32 @@ body {
 #root {
     display: grid;
     gap: 1em;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(140px, auto));
+    width: 100%;
+    max-width: 1300px;
 }
 
 .link {
     aspect-ratio: 1 / 1;
-    border-width: 2px;
-    border-style: solid;
-    border-color: lightgrey;
-    align-content: center;
-    text-align: center;
+    border: 2px solid lightgrey;
     text-decoration: none;
     font-family: sans-serif;
     padding: 1em;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.favicon {
+    image-rendering: pixelated;
+}
+
+.title {
+    text-align: center;
 }
 
 .link:hover {
